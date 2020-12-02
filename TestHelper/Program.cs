@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MyHelper
+namespace TestHelper
 {
     class Program
     {
