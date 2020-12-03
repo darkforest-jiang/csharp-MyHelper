@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyHelper", "MyHelper\MyHelper.csproj", "{DF89F787-39FD-4D62-B9DE-3294A62B2FCA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestHelper", "TestHelper\TestHelper.csproj", "{8975C15D-108E-4DF3-9F50-B131C2C0DF9E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestHelper", "TestHelper\TestHelper.csproj", "{8975C15D-108E-4DF3-9F50-B131C2C0DF9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestHelperApp", "TestHelperApp\TestHelperApp.csproj", "{34E60EFC-8450-4B79-87DD-8359FB79CFFA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{8975C15D-108E-4DF3-9F50-B131C2C0DF9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8975C15D-108E-4DF3-9F50-B131C2C0DF9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8975C15D-108E-4DF3-9F50-B131C2C0DF9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34E60EFC-8450-4B79-87DD-8359FB79CFFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34E60EFC-8450-4B79-87DD-8359FB79CFFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34E60EFC-8450-4B79-87DD-8359FB79CFFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34E60EFC-8450-4B79-87DD-8359FB79CFFA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
