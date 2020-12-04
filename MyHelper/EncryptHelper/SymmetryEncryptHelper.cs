@@ -46,7 +46,7 @@ namespace MyHelper.EncryptHelper
         /// </summary>
         /// <param name="secretStr"></param>
         /// <returns></returns>
-        public string Decrypto(string secretStr)
+        public string Decrypt(string secretStr)
         {
             byte[] bytIn = Convert.FromBase64String(secretStr);
             MemoryStream ms = new MemoryStream(bytIn, 0, bytIn.Length);
@@ -76,7 +76,7 @@ namespace MyHelper.EncryptHelper
             else if (strTemp.Length < KeyLength)
                 strTemp = strTemp.PadRight(KeyLength, ' ');
 
-            return ASCIIEncoding.ASCII.GetBytes(strTemp);
+            return ASCIIEncoding.UTF8.GetBytes(strTemp);
         }
 
         /// <summary>    
@@ -94,7 +94,7 @@ namespace MyHelper.EncryptHelper
             else if (strTemp.Length < IVLength)
                 strTemp = strTemp.PadRight(IVLength, ' ');
 
-            return ASCIIEncoding.ASCII.GetBytes(strTemp);
+            return ASCIIEncoding.UTF8.GetBytes(strTemp);
         }
 
         #endregion
