@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyHelper", "MyHelper\MyHelp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestHelper", "TestHelper\TestHelper.csproj", "{8975C15D-108E-4DF3-9F50-B131C2C0DF9E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestHelperApp", "TestHelperApp\TestHelperApp.csproj", "{34E60EFC-8450-4B79-87DD-8359FB79CFFA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestHelperApp", "TestHelperApp\TestHelperApp.csproj", "{34E60EFC-8450-4B79-87DD-8359FB79CFFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitMqHelper", "RabbitMqHelper\RabbitMqHelper.csproj", "{485233D8-7DC1-4926-B094-C5C6EC01491B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{34E60EFC-8450-4B79-87DD-8359FB79CFFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34E60EFC-8450-4B79-87DD-8359FB79CFFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34E60EFC-8450-4B79-87DD-8359FB79CFFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{485233D8-7DC1-4926-B094-C5C6EC01491B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{485233D8-7DC1-4926-B094-C5C6EC01491B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{485233D8-7DC1-4926-B094-C5C6EC01491B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{485233D8-7DC1-4926-B094-C5C6EC01491B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
