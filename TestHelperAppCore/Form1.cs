@@ -27,11 +27,10 @@ namespace TestHelperAppCore
 
         private void button1_Click(object sender, EventArgs e)
         {
-            rabbitMqHelper.PushMsg("HelloQ", new List<string>() {
-                "232",
-                "2",
-                "3"
-            });
+            //rabbitMqHelper.Publish(new RabbitMqHelper.ExchangeConfig() { 
+            //}, "1");
+            //rabbitMqHelper.Publish("HelloQ", "2");
+            //rabbitMqHelper.Publish("HelloQ", "3");
         }
 
         //1nJys3HiJrMUT0ggrV4XTw==

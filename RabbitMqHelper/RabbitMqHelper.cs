@@ -32,7 +32,7 @@ namespace RabbitMqHelper
             };
         }
 
-        public bool PushMsg(string queueName, List<string> listMsg)
+        public bool Publish(ExchangeConfig exchangeConfig, QueueConfig queueConfig, string msg, int? msgPriority)
         {
             try
             {
@@ -40,16 +40,46 @@ namespace RabbitMqHelper
                 if(channel == null)
                 {
                     return false;
-                }
-                channel.QueueDeclare(queueName, false, false, false, null);
-                var properties = channel.CreateBasicProperties();
-                properties.DeliveryMode = 1;//消息持久化
+                }                                                        
 
-                foreach (var msg in listMsg)
+                //申明交换机
+                channel.ExchangeDeclare(exchangeConfig.ExchangeName, exchangeConfig.ExchangeType.ToString(), exchangeConfig.Durable, exchangeConfig.AutoDelete, exchangeConfig.ExchangeParms);
+                //申明队列
+                channel.QueueDeclare(queueConfig.QueueName, queueConfig.Durable, queueConfig.Exclusive, queueConfig.AutoDelete, queueConfig.QueueParms);
+                //绑定交换机和队列
+                channel.QueueBind(queueConfig.QueueName, exchangeConfig.ExchangeName, queueConfig.RoutingKey);
+                var properties = channel.CreateBasicProperties();
+                if(queueConfig.Durable)
                 {
-                    channel.BasicPublish("", queueName, properties, Encoding.UTF8.GetBytes(msg));
-                    Thread.Sleep(1 * 1000);
+                    properties.DeliveryMode = 2;
                 }
+                else
+                {
+                    properties.DeliveryMode = 1;
+                }
+                if(msgPriority != null)
+                {
+                    properties.Priority = (byte)msgPriority;
+                }
+
+                //发送消息
+                if(queueConfig.IsConfirm)
+                {
+                    channel.ConfirmSelect();
+                }
+                channel.BasicPublish(exchangeConfig.ExchangeName, queueConfig.QueueName, properties, Encoding.UTF8.GetBytes(msg));
+                if(queueConfig.IsConfirm)
+                {
+                    if(channel.WaitForConfirms())
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+
                 return true;
             }
             catch (Exception ex)
