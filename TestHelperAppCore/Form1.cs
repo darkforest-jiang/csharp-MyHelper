@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -18,7 +19,21 @@ namespace TestHelperAppCore
         }
 
 
-        RabbitMqHelper.RabbitMqHelper rabbitMqHelper = new RabbitMqHelper.RabbitMqHelper(new RabbitMqHelper.RabbitMqConfig()
+        RabbitMqHelper.RabbitMqSdkHelper rmsdk0 = new RabbitMqHelper.RabbitMqSdkHelper(new RabbitMqHelper.RabbitMqConfig()
+        {
+            HostName = "localhost",
+            UserName = "guest",
+            Pwd = "guest"
+        });
+
+        RabbitMqHelper.RabbitMqSdkHelper rmsdk1 = new RabbitMqHelper.RabbitMqSdkHelper(new RabbitMqHelper.RabbitMqConfig()
+        {
+            HostName = "localhost",
+            UserName = "guest",
+            Pwd = "guest"
+        });
+
+        RabbitMqHelper.RabbitMqSdkHelper rmsdk2 = new RabbitMqHelper.RabbitMqSdkHelper(new RabbitMqHelper.RabbitMqConfig()
         {
             HostName = "localhost",
             UserName = "guest",
@@ -27,37 +42,49 @@ namespace TestHelperAppCore
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //rabbitMqHelper.Publish(new RabbitMqHelper.ExchangeConfig() { 
-            //}, "1");
-            //rabbitMqHelper.Publish("HelloQ", "2");
-            //rabbitMqHelper.Publish("HelloQ", "3");
+            RabbitMqHelper.ExchangeConfig exchangeConfig = new RabbitMqHelper.ExchangeConfig() {
+               ExchangeName = "myexchange",
+               ExchangeType = RabbitMqHelper.RabbitMqEnum.ExchangeTypeEnum.direct
+            };
+            RabbitMqHelper.QueueConfig queueConfig = new RabbitMqHelper.QueueConfig() { 
+                QueueName = "myqueue",
+                RoutingKey = "mykey",
+                IsConfirm = true,
+
+            };
+            queueConfig.AddQueueParm("x-max-priority", 10);
+
+            rmsdk0.Publish(exchangeConfig, queueConfig, "1", 1);
+            rmsdk0.Publish(exchangeConfig, queueConfig, "2", 2);
+            rmsdk0.Publish(exchangeConfig, queueConfig, "3", 3);
+
         }
 
-        //1nJys3HiJrMUT0ggrV4XTw==
         private void button2_Click(object sender, EventArgs e)
         {
-            rabbitMqHelper.ReceiveMsg("HelloQ", haha);
+            rmsdk1.Receive("myqueue", haha, true);
+            rmsdk2.Receive("myqueue", haha1, true);
         }
 
         private void haha(string msg)
         {                                           
             richTextBox1.Invoke(new MethodInvoker(delegate ()
             {
-                richTextBox1.AppendText(msg + "\n");
+                richTextBox1.AppendText("haha====" + msg + "\n");
+            }));
+        }
+
+        private void haha1(string msg)
+        {
+            Thread.Sleep(5000);
+            richTextBox1.Invoke(new MethodInvoker(delegate ()
+            {
+                richTextBox1.AppendText("haha1====" + msg + "\n");
             }));
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            string msg;
-            if(rabbitMqHelper.ReceiveOneMsg("HelloQ", out msg))
-            {
-                richTextBox1.AppendText(msg + "\n");
-            }
-            else
-            {
-                richTextBox1.AppendText("无数据" + "\n");
-            }
         }
     }
 }

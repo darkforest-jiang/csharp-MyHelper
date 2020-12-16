@@ -12,7 +12,7 @@ namespace RabbitMqHelper
         public string QueueName { get; set; }
 
         /// <summary>
-        /// 是否返送消息 需要确认
+        /// 是否发送消息 需要确认
         /// </summary>
         public bool IsConfirm { get; set; } = false;
 
@@ -20,6 +20,11 @@ namespace RabbitMqHelper
         /// 绑定队列 和交换机的Key
         /// </summary>
         public string RoutingKey { get; set; }
+
+        /// <summary>
+        /// 公平分发
+        /// </summary>
+        public bool FairQos { get; set; } = true;
 
         /// <summary>
         /// 是否持久化
@@ -53,7 +58,7 @@ namespace RabbitMqHelper
         /// <summary>
         /// 添加队列参数
         /// </summary>
-        public void AddQueueParm(string k, string v)
+        public void AddQueueParm(string k, object v)
         {
             if(QueueParms == null)
             {

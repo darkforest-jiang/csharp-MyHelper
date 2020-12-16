@@ -9,7 +9,7 @@ using RabbitMQ.Client.Events;
 
 namespace RabbitMqHelper
 {
-    public class RabbitMqHelper: IDisposable
+    public class RabbitMqSdkHelper: IDisposable
     {
         private RabbitMqConfig _rabbitMqConfig;
 
@@ -21,7 +21,7 @@ namespace RabbitMqHelper
 
         
 
-        public RabbitMqHelper(RabbitMqConfig rmConfig)
+        public RabbitMqSdkHelper(RabbitMqConfig rmConfig)
         {
             _rabbitMqConfig = rmConfig;
             _connFactory = new ConnectionFactory()
@@ -46,6 +46,10 @@ namespace RabbitMqHelper
                 channel.ExchangeDeclare(exchangeConfig.ExchangeName, exchangeConfig.ExchangeType.ToString(), exchangeConfig.Durable, exchangeConfig.AutoDelete, exchangeConfig.ExchangeParms);
                 //申明队列
                 channel.QueueDeclare(queueConfig.QueueName, queueConfig.Durable, queueConfig.Exclusive, queueConfig.AutoDelete, queueConfig.QueueParms);
+                if(queueConfig.FairQos)  //设置公平分发
+                {
+                    channel.BasicQos(0, 1, false);
+                }
                 //绑定交换机和队列
                 channel.QueueBind(queueConfig.QueueName, exchangeConfig.ExchangeName, queueConfig.RoutingKey);
                 var properties = channel.CreateBasicProperties();
@@ -67,7 +71,7 @@ namespace RabbitMqHelper
                 {
                     channel.ConfirmSelect();
                 }
-                channel.BasicPublish(exchangeConfig.ExchangeName, queueConfig.QueueName, properties, Encoding.UTF8.GetBytes(msg));
+                channel.BasicPublish(exchangeConfig.ExchangeName, queueConfig.RoutingKey, properties, Encoding.UTF8.GetBytes(msg));
                 if(queueConfig.IsConfirm)
                 {
                     if(channel.WaitForConfirms())
@@ -88,19 +92,26 @@ namespace RabbitMqHelper
             }
         }
 
-        public bool ReceiveMsg(string queueName, Action<string> receiveAction)
+        public bool Receive(string queueName, Action<string> receiveAction, bool autoAck)
         {
             try
             {
                 var channel = GetChannel();
-
+                if (autoAck == false)
+                {
+                    channel.BasicQos(0, 1, false);//公平分发
+                }
                 var consumer = new EventingBasicConsumer(channel);//消费者
-                channel.BasicConsume(queueName, true, consumer);//消费消息
+                channel.BasicConsume(queueName, autoAck, consumer);//消费消息
                 consumer.Received += (model, ea) =>
                 {
-                    ThreadPool.QueueUserWorkItem((o)=> {
+                    ThreadPool.QueueUserWorkItem((o) => {
                         var message = Encoding.UTF8.GetString(ea.Body.ToArray());
                         receiveAction(message);
+                        if(autoAck == false)
+                        {
+                            channel.BasicAck(ea.DeliveryTag, false);
+                        }
                     }, null);
                 };
                 return true;
