@@ -92,12 +92,12 @@ namespace RabbitMqHelper
             }
         }
 
-        public bool Receive(string queueName, Action<string> receiveAction, bool autoAck)
+        public bool Receive(string queueName, Action<string> receiveAction, bool autoAck, bool FairQos)
         {
             try
             {
                 var channel = GetChannel();
-                if (autoAck == false)
+                if (FairQos)
                 {
                     channel.BasicQos(0, 1, false);//公平分发
                 }

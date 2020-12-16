@@ -62,8 +62,8 @@ namespace TestHelperAppCore
 
         private void button2_Click(object sender, EventArgs e)
         {
-            rmsdk1.Receive("myqueue", haha, true);
-            rmsdk2.Receive("myqueue", haha1, true);
+            rmsdk1.Receive("myqueue", haha, false, true);
+            rmsdk2.Receive("myqueue", haha1, false, true);
         }
 
         private void haha(string msg)
@@ -72,15 +72,16 @@ namespace TestHelperAppCore
             {
                 richTextBox1.AppendText("haha====" + msg + "\n");
             }));
+            Thread.Sleep(2000);
         }
 
         private void haha1(string msg)
         {
-            Thread.Sleep(5000);
             richTextBox1.Invoke(new MethodInvoker(delegate ()
             {
                 richTextBox1.AppendText("haha1====" + msg + "\n");
             }));
+            Thread.Sleep(5000);
         }
 
         private void button3_Click(object sender, EventArgs e)
