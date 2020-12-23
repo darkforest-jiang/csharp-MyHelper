@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MyHelper\MyHelper.csproj" />
+    <ProjectReference Include="..\SocketHelper\SocketHelper.csproj" />
   </ItemGroup>
 
 </Project>

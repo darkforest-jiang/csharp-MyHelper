@@ -87,5 +87,11 @@ namespace TestHelperAppCore
         private void button3_Click(object sender, EventArgs e)
         {
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            uint a = 1345676;
+            MessageBox.Show(BitConverter.GetBytes(a).Length.ToString());
+        }
     }
 }
