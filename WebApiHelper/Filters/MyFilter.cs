@@ -20,14 +20,30 @@ namespace WebApiHelper.Filters
         /// <param name="filterContext"></param>
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
+            base.OnActionExecuting(filterContext);
+            //todo
+                      
+            //请求参数都是一致的 可以获得其中的授权信息 如果不对拒绝执行
+            //if (true)
+            //{
+            //    throw new Exception("用户非法跨权限访问，token：" );
+            //}
+
+            //记录日志
+            //filterContext.ActionArguments 请求参，Dictionary字典类型 key是方法的参数名 value是参数值
+            //filterContext.ActionDescriptor.Parameters获取方法参数信息 名称等
             FilterLog flog = new FilterLog()
             {
-                ActionName = filterContext.ActionDescriptor.DisplayName,
+                ActionName = filterContext.ActionDescriptor.DisplayName,//包含了控制器名称和方法名称
                 RequestTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff"),
                 RequestParm = JsonConvert.SerializeObject(filterContext.ActionArguments[filterContext.ActionDescriptor.Parameters[0].Name])
             };
+
+            //filterContext.HttpContext.Items 可以存一些自定义数据 以便在其他方法 如 OnResultExecuted中国使用
             filterContext.HttpContext.Items.Add("FilterLog", flog);
-            base.OnActionExecuting(filterContext);
+
+
+            
         }
 
 
@@ -38,26 +54,31 @@ namespace WebApiHelper.Filters
         public override void OnActionExecuted(ActionExecutedContext filterContext)
         {
             base.OnActionExecuted(filterContext);
+            //todo
         }
 
         /// <summary>
-        /// action执行结果之前
+        /// action return 结果之前
         /// </summary>
         /// <param name="filterContext"></param>
         public override void OnResultExecuting(ResultExecutingContext filterContext)
         {
             base.OnResultExecuting(filterContext);
+            //todo
         }
 
         /// <summary>
-        /// action执行结果之后
+        /// action return 结果之后
         /// </summary>
         /// <param name="filterContext"></param>
         public override void OnResultExecuted(ResultExecutedContext filterContext)
         {
+            base.OnResultExecuted(filterContext);
+            //todo
+
             FilterLog flog = filterContext.HttpContext.Items["FilterLog"] as FilterLog;
             Console.WriteLine(JsonConvert.SerializeObject(flog));
-            base.OnResultExecuted(filterContext);
+            
         }
 
     }

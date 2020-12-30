@@ -22,7 +22,7 @@ namespace WebApiHelper.Controllers
             rr.Code = 1;
             rr.Msg = "Hello";
             rr.Data = "hahah";
-            Thread.Sleep(1 * 1000);
+            Thread.Sleep(5 * 1000);
             return rr;
         }
     }
