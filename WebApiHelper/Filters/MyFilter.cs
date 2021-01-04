@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using Microsoft.AspNetCore.Mvc;
 
 namespace WebApiHelper.Filters
 {
@@ -22,8 +23,24 @@ namespace WebApiHelper.Filters
         {
             base.OnActionExecuting(filterContext);
             //todo
-                      
+
             //请求参数都是一致的 可以获得其中的授权信息 如果不对拒绝执行
+            //如果api接口是统一的参数 参数权限验证信息也在里边 在这儿也可以直接获取参数信息做权限验证
+            string token = string.Empty;
+            if(filterContext.HttpContext.Request.Headers.ContainsKey("token"))
+            {
+                token = filterContext.HttpContext.Request.Headers["token"].ToString();
+            }
+            if (token != "haha")    //验证token
+            {
+                //返回一个内容result     然后程序就不会进入controller中执行api方法
+                filterContext.Result = new ContentResult() { 
+                    StatusCode = 404,
+                    ContentType = "拒绝访问",
+                    Content = "无权限访问"
+                };
+                return;
+            }
             //if (true)
             //{
             //    throw new Exception("用户非法跨权限访问，token：" );
