@@ -1,0 +1,8 @@
+2021-01-04 21:54:06.5165 Info Message Template Auto Format enabled
+2021-01-04 21:54:06.5845 Info Loading assembly: NLog.Web.AspNetCore
+2021-01-04 21:54:06.6833 Info Adding target FileTarget(Name=allfile)
+2021-01-04 21:54:06.6833 Info Adding target FileTarget(Name=ownFile-web)
+2021-01-04 21:54:06.7586 Info Validating config: TargetNames=ownFile-web, ConfigItems=43, FilePath=E:\MyGitHubCode\CSharp\MyHelper\WebApiHelper\bin\Debug\net5.0\NLog.config
+2021-01-04 21:54:06.7782 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: allfile
+2021-01-04 21:54:06.7961 Info Configuration initialized.
+2021-01-04 21:54:06.7961 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.6.12219. Product version: 4.7.6+e16065c1f397a4b0a5beed10d2e79bbedc1fd1e6. GlobalAssemblyCache: False

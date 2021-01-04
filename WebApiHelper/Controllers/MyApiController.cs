@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,13 @@ namespace WebApiHelper.Controllers
     [MyFilter]
     public class MyApiController : ControllerBase
     {
+        private readonly ILogger<MyApiController> _logger;
+
+        public MyApiController(ILogger<MyApiController> logger)
+        {
+            _logger = logger;
+        }
+
         [HttpPost]
         public Rr<string> Hello(Rp<string> rp)
         {
@@ -22,7 +30,9 @@ namespace WebApiHelper.Controllers
             rr.Code = 1;
             rr.Msg = "Hello";
             rr.Data = "hahah";
-            Thread.Sleep(5 * 1000);
+
+            _logger.LogInformation("hhahahh完成了");
+
             return rr;
         }
     }

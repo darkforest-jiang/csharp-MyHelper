@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using NLog.Web;
 
 namespace WebApiHelper
 {
@@ -21,6 +22,12 @@ namespace WebApiHelper
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                });
+                })
+                //添加NLOG日志中间件
+                .ConfigureLogging(logging => {
+                    logging.ClearProviders();////移除已经注册的其他日志处理程序
+                    logging.SetMinimumLevel(LogLevel.Trace);//设置最小的日志级别
+                }
+                ).UseNLog();
     }
 }
