@@ -11,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AspNetCoreRateLimit;
 
 namespace WebApiHelper
 {
@@ -35,6 +36,32 @@ namespace WebApiHelper
                 )
             );
 
+            #region AspNetCoreRateLimit
+            // needed to load configuration from appsettings.json
+            services.AddOptions();
+
+            //needed to store rate limit counters and ip rules
+            services.AddMemoryCache();
+
+            //load general configuration from appsettings.json
+            services.Configure<IpRateLimitOptions>(Configuration.GetSection("IpRateLimiting"));
+
+            //load ip rules from appsetting.json
+            services.Configure<IpRateLimitPolicies>(Configuration.GetSection("IpRateLimitPolicies"));
+
+            //inject counter and rules stores
+            services.AddSingleton<IIpPolicyStore, MemoryCacheIpPolicyStore>();
+            services.AddSingleton<IRateLimitCounterStore, MemoryCacheRateLimitCounterStore>();
+            //inject counter and rules distributed cache stores
+            //上边的2行是表示 用内存来存储计数信息，如果要用到 其它方式存储 如redis等 则用以下2行来代替
+            //services.AddSingleton<IIpPolicyStore, DistributedCacheIpPolicyStore>();
+            //services.AddSingleton<IRateLimitCounterStore, DistributedCacheRateLimitCounterStore>();
+
+            //configuration (resolvers,  counter  key builder)
+            services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();
+
+            #endregion
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -54,6 +81,10 @@ namespace WebApiHelper
 
             //允许跨域
             app.UseCors("cors");
+
+            #region AspNetCoreRateLimit
+            app.UseIpRateLimiting();
+            #endregion
 
             app.UseHttpsRedirection();
 
