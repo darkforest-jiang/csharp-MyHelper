@@ -21,8 +21,12 @@ namespace WebApiHelper
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseStartup<Startup>();
-                })
+                    webBuilder.UseStartup<Startup>()
+                    //添加AspNetCoreRateLimit的json配置文件
+                    .ConfigureAppConfiguration((host, config)=> {
+                        config.AddJsonFile("appsettings.RateLimit.json", optional:true, reloadOnChange:true);
+                    });
+                })                                                         
                 //添加NLOG日志中间件
                 .ConfigureLogging(logging => {
                     logging.ClearProviders();////移除已经注册的其他日志处理程序
