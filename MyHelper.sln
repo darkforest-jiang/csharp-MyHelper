@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocketHelper", "SocketHelpe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiHelper", "WebApiHelper\WebApiHelper.csproj", "{86EA21F4-3A23-4539-BBAC-48FCFD432600}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoDBHelper", "MongoDBHelper\MongoDBHelper.csproj", "{E3644314-858E-47E3-A2C0-5D6D2B30B712}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MongoDBHelper", "MongoDBHelper\MongoDBHelper.csproj", "{E3644314-858E-47E3-A2C0-5D6D2B30B712}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBHelper", "DBHelper\DBHelper.csproj", "{D56CAFE7-82D7-4C47-9347-DF06B56688FE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{E3644314-858E-47E3-A2C0-5D6D2B30B712}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E3644314-858E-47E3-A2C0-5D6D2B30B712}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E3644314-858E-47E3-A2C0-5D6D2B30B712}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D56CAFE7-82D7-4C47-9347-DF06B56688FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D56CAFE7-82D7-4C47-9347-DF06B56688FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D56CAFE7-82D7-4C47-9347-DF06B56688FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D56CAFE7-82D7-4C47-9347-DF06B56688FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
