@@ -12,9 +12,9 @@ using SocketHelper;
 
 namespace TestHelperApp
 {
-    public partial class Form1 : Form
+    public partial class TestSocketFrm : Form
     {
-        public Form1()
+        public TestSocketFrm()
         {
             InitializeComponent();
         }

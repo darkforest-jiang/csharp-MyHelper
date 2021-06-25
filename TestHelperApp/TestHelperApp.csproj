@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DBHelper\DBHelper.csproj" />
     <ProjectReference Include="..\MyHelper\MyHelper.csproj" />
     <ProjectReference Include="..\SocketHelper\SocketHelper.csproj" />
   </ItemGroup>

@@ -25,6 +25,16 @@ namespace DBHelper.SqlserverDB
         /// </summary>
         public string CmdExecErrFlag = "Msg";
 
+        public SqlDbHelper()
+        {
+
+        }
+
+        public SqlDbHelper(string connStr)
+        {
+            ConnStr = connStr;
+        }
+
         #region 通用获取数据
 
         /// <summary>

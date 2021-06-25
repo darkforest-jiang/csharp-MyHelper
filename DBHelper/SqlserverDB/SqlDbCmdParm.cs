@@ -26,6 +26,20 @@ namespace DBHelper.SqlserverDB
         /// <summary>
         /// sql命令参数列表
         /// </summary>
-        public SortedList<string, SqlParameter> SqlParms { get; set; }
+        private SortedList<string, SqlParameter> _sqlParms;
+        /// <summary>
+        /// sql命令参数列表
+        /// </summary>
+        public SortedList<string, SqlParameter> SqlParms 
+        {
+            get
+            {
+                if(_sqlParms == null)
+                {
+                    _sqlParms = new SortedList<string, SqlParameter>();
+                }
+                return _sqlParms;
+            }
+        }
     }
 }

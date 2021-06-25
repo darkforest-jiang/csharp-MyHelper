@@ -1,7 +1,7 @@
 ﻿
 namespace TestHelperApp
 {
-    partial class Form1
+    partial class TestSocketFrm
     {
         /// <summary>
         ///  Required designer variable.
