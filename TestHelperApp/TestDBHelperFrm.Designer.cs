@@ -30,12 +30,15 @@ namespace TestHelperApp
         private void InitializeComponent()
         {
             this.dgv_result = new System.Windows.Forms.DataGridView();
-            this.btn_sql_1queryno = new System.Windows.Forms.Button();
+            this.btn_sqlquery = new System.Windows.Forms.Button();
             this.rb_oracle = new System.Windows.Forms.RadioButton();
             this.rb_mysql = new System.Windows.Forms.RadioButton();
             this.rb_sqlserver = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btn_1queryyes = new System.Windows.Forms.Button();
+            this.cb_bingdinglist = new System.Windows.Forms.CheckBox();
+            this.btn_procquery = new System.Windows.Forms.Button();
+            this.cb_parm = new System.Windows.Forms.CheckBox();
+            this.btn_execproc = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_result)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -49,15 +52,15 @@ namespace TestHelperApp
             this.dgv_result.Size = new System.Drawing.Size(736, 239);
             this.dgv_result.TabIndex = 5;
             // 
-            // btn_sql_1queryno
+            // btn_sqlquery
             // 
-            this.btn_sql_1queryno.Location = new System.Drawing.Point(163, 42);
-            this.btn_sql_1queryno.Name = "btn_sql_1queryno";
-            this.btn_sql_1queryno.Size = new System.Drawing.Size(136, 23);
-            this.btn_sql_1queryno.TabIndex = 6;
-            this.btn_sql_1queryno.Text = "单条查询(不带参数)";
-            this.btn_sql_1queryno.UseVisualStyleBackColor = true;
-            this.btn_sql_1queryno.Click += new System.EventHandler(this.btn_sql_1queryno_Click);
+            this.btn_sqlquery.Location = new System.Drawing.Point(163, 42);
+            this.btn_sqlquery.Name = "btn_sqlquery";
+            this.btn_sqlquery.Size = new System.Drawing.Size(136, 23);
+            this.btn_sqlquery.TabIndex = 6;
+            this.btn_sqlquery.Text = "sql查询";
+            this.btn_sqlquery.UseVisualStyleBackColor = true;
+            this.btn_sqlquery.Click += new System.EventHandler(this.btn_sql_1queryno_Click);
             // 
             // rb_oracle
             // 
@@ -103,23 +106,56 @@ namespace TestHelperApp
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "数据库";
             // 
-            // btn_1queryyes
+            // cb_bingdinglist
             // 
-            this.btn_1queryyes.Location = new System.Drawing.Point(305, 42);
-            this.btn_1queryyes.Name = "btn_1queryyes";
-            this.btn_1queryyes.Size = new System.Drawing.Size(134, 23);
-            this.btn_1queryyes.TabIndex = 7;
-            this.btn_1queryyes.Text = "单条查询(带参数)";
-            this.btn_1queryyes.UseVisualStyleBackColor = true;
-            this.btn_1queryyes.Click += new System.EventHandler(this.btn_1queryyes_Click);
+            this.cb_bingdinglist.AutoSize = true;
+            this.cb_bingdinglist.Location = new System.Drawing.Point(305, 12);
+            this.cb_bingdinglist.Name = "cb_bingdinglist";
+            this.cb_bingdinglist.Size = new System.Drawing.Size(98, 21);
+            this.cb_bingdinglist.TabIndex = 8;
+            this.cb_bingdinglist.Text = "BingdingList";
+            this.cb_bingdinglist.UseVisualStyleBackColor = true;
+            // 
+            // btn_procquery
+            // 
+            this.btn_procquery.Location = new System.Drawing.Point(318, 42);
+            this.btn_procquery.Name = "btn_procquery";
+            this.btn_procquery.Size = new System.Drawing.Size(134, 23);
+            this.btn_procquery.TabIndex = 9;
+            this.btn_procquery.Text = "proc查询";
+            this.btn_procquery.UseVisualStyleBackColor = true;
+            this.btn_procquery.Click += new System.EventHandler(this.btn_procqueryno_Click);
+            // 
+            // cb_parm
+            // 
+            this.cb_parm.AutoSize = true;
+            this.cb_parm.Location = new System.Drawing.Point(178, 12);
+            this.cb_parm.Name = "cb_parm";
+            this.cb_parm.Size = new System.Drawing.Size(82, 21);
+            this.cb_parm.TabIndex = 10;
+            this.cb_parm.Text = "userParm";
+            this.cb_parm.UseVisualStyleBackColor = true;
+            // 
+            // btn_execproc
+            // 
+            this.btn_execproc.Location = new System.Drawing.Point(475, 42);
+            this.btn_execproc.Name = "btn_execproc";
+            this.btn_execproc.Size = new System.Drawing.Size(134, 23);
+            this.btn_execproc.TabIndex = 11;
+            this.btn_execproc.Text = "proc";
+            this.btn_execproc.UseVisualStyleBackColor = true;
+            this.btn_execproc.Click += new System.EventHandler(this.btn_execproc_Click);
             // 
             // TestDBHelper
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btn_1queryyes);
-            this.Controls.Add(this.btn_sql_1queryno);
+            this.Controls.Add(this.btn_execproc);
+            this.Controls.Add(this.cb_parm);
+            this.Controls.Add(this.btn_procquery);
+            this.Controls.Add(this.cb_bingdinglist);
+            this.Controls.Add(this.btn_sqlquery);
             this.Controls.Add(this.dgv_result);
             this.Controls.Add(this.groupBox1);
             this.Name = "TestDBHelper";
@@ -128,17 +164,21 @@ namespace TestHelperApp
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.DataGridView dgv_result;
-        private System.Windows.Forms.Button btn_sql_1queryno;
+        private System.Windows.Forms.Button btn_sqlquery;
         private System.Windows.Forms.RadioButton rb_oracle;
         private System.Windows.Forms.RadioButton rb_mysql;
         private System.Windows.Forms.RadioButton rb_sqlserver;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btn_1queryyes;
+        private System.Windows.Forms.CheckBox cb_bingdinglist;
+        private System.Windows.Forms.Button btn_procquery;
+        private System.Windows.Forms.CheckBox cb_parm;
+        private System.Windows.Forms.Button btn_execproc;
     }
 }
