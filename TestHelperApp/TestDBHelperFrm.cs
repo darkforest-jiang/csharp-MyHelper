@@ -94,6 +94,87 @@ namespace TestHelperApp
                 MessageBox.Show($"error:{result.ErrMsg.Message}");
             }
         }
+
+        private void btn_sql2same_Click(object sender, EventArgs e)
+        {
+            string sql = "";
+            sql = "insert TMy_User values(@UserId, @UserCode, @UserName, @Enabled)";
+            List<SortedList<string, SqlParameter>> sqlParms = new List<SortedList<string, SqlParameter>>();
+            SortedList<string, SqlParameter> sqlp1 = new SortedList<string, SqlParameter>();
+            sqlp1.Add("UserId", new SqlParameter("UserId", SqlDbType.VarChar));
+            sqlp1["UserId"].Value = "3";
+            sqlp1.Add("UserCode", new SqlParameter("UserCode", SqlDbType.VarChar));
+            sqlp1["UserCode"].Value = "dark";
+            sqlp1.Add("UserName", new SqlParameter("UserName", SqlDbType.VarChar));
+            sqlp1["UserName"].Value = "黑夜";
+            sqlp1.Add("Enabled", new SqlParameter("Enabled", SqlDbType.Int));
+            sqlp1["Enabled"].Value = 1;
+            sqlParms.Add(sqlp1);
+
+            SortedList<string, SqlParameter> sqlp2 = new SortedList<string, SqlParameter>();
+            sqlp2.Add("UserId", new SqlParameter("UserId", SqlDbType.VarChar));
+            sqlp2["UserId"].Value = "4";
+            sqlp2.Add("UserCode", new SqlParameter("UserCode", SqlDbType.VarChar));
+            sqlp2["UserCode"].Value = "forest";
+            sqlp2.Add("UserName", new SqlParameter("UserName", SqlDbType.VarChar));
+            sqlp2["UserName"].Value = "森林";
+            sqlp2.Add("Enabled", new SqlParameter("Enabled", SqlDbType.Int));
+            sqlp2["Enabled"].Value = 1;
+            sqlParms.Add(sqlp2);
+
+            var result = sqldb.TOpListData(CommandType.Text, sql, ref sqlParms);
+            if(result.IsSuccess)
+            {
+                MessageBox.Show("OK");
+            }
+            else
+            {
+                MessageBox.Show($"error:{result.ErrMsg.Message}");
+            }
+        }
+
+        private void btn_sql2no_Click(object sender, EventArgs e)
+        {
+            List<string> listsql = new List<string>();
+            List<SortedList<string, SqlParameter>> sqlParms = new List<SortedList<string, SqlParameter>>();
+            if (cb_parm.Checked)
+            {
+                string sql1 = "update TMy_User set UserCode=@UserCode where UserId=@UserId";
+                listsql.Add(sql1);
+                SortedList<string, SqlParameter> sqlp1 = new SortedList<string, SqlParameter>();
+                sqlp1.Add("UserId", new SqlParameter("UserId", SqlDbType.VarChar));
+                sqlp1["UserId"].Value = "0";
+                sqlp1.Add("UserCode", new SqlParameter("UserCode", SqlDbType.VarChar));
+                sqlp1["UserCode"].Value = "000000";
+                sqlParms.Add(sqlp1);
+
+                string sql2 = "update TMy_User set UserCode=@UserCode where UserId=@UserId";
+                listsql.Add(sql2);
+                SortedList<string, SqlParameter> sqlp2 = new SortedList<string, SqlParameter>();
+                sqlp2.Add("UserId", new SqlParameter("UserId", SqlDbType.VarChar));
+                sqlp2["UserId"].Value = "3";
+                sqlp2.Add("UserCode", new SqlParameter("UserCode", SqlDbType.VarChar));
+                sqlp2["UserCode"].Value = "333333";
+                sqlParms.Add(sqlp2);
+            }
+            else
+            {
+                string sql1 = "update TMy_User set UserName='000000' where UserId=0";
+                string sql2 = "update TMy_User set UserName='森林氧吧' where UserId=4";
+                listsql.Add(sql1);
+                listsql.Add(sql2);
+            }
+
+            var result = sqldb.TOpListData(CommandType.Text, listsql, ref sqlParms);
+            if (result.IsSuccess)
+            {
+                MessageBox.Show("OK");
+            }
+            else
+            {
+                MessageBox.Show($"error:{result.ErrMsg.Message}");
+            }
+        }
     }
 
     public class TMy_User

@@ -422,9 +422,12 @@ namespace DBHelper.SqlserverDB
                     {
                         dbOp.DbCmdParm.CmdText = sqlItem;
                         dbOp.DbCmdParm.SqlParms.Clear();
-                        foreach (var pnItem in sqlParms[index].Keys)
+                        if(sqlParms != null && sqlParms.Count >= index + 1 && sqlParms[index] != null)
                         {
-                            dbOp.DbCmdParm.SqlParms.Add(pnItem, sqlParms[index][pnItem]);
+                            foreach (var pnItem in sqlParms[index].Keys)
+                            {
+                                dbOp.DbCmdParm.SqlParms.Add(pnItem, sqlParms[index][pnItem]);
+                            }
                         }
 
                         if (dbOp.BExecNonCmd())

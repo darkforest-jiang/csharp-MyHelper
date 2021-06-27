@@ -39,6 +39,8 @@ namespace TestHelperApp
             this.btn_procquery = new System.Windows.Forms.Button();
             this.cb_parm = new System.Windows.Forms.CheckBox();
             this.btn_execproc = new System.Windows.Forms.Button();
+            this.btn_sql2same = new System.Windows.Forms.Button();
+            this.btn_sql2no = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_result)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -140,17 +142,39 @@ namespace TestHelperApp
             // 
             this.btn_execproc.Location = new System.Drawing.Point(475, 42);
             this.btn_execproc.Name = "btn_execproc";
-            this.btn_execproc.Size = new System.Drawing.Size(134, 23);
+            this.btn_execproc.Size = new System.Drawing.Size(59, 23);
             this.btn_execproc.TabIndex = 11;
             this.btn_execproc.Text = "proc";
             this.btn_execproc.UseVisualStyleBackColor = true;
             this.btn_execproc.Click += new System.EventHandler(this.btn_execproc_Click);
+            // 
+            // btn_sql2same
+            // 
+            this.btn_sql2same.Location = new System.Drawing.Point(555, 42);
+            this.btn_sql2same.Name = "btn_sql2same";
+            this.btn_sql2same.Size = new System.Drawing.Size(75, 23);
+            this.btn_sql2same.TabIndex = 12;
+            this.btn_sql2same.Text = "多条same";
+            this.btn_sql2same.UseVisualStyleBackColor = true;
+            this.btn_sql2same.Click += new System.EventHandler(this.btn_sql2same_Click);
+            // 
+            // btn_sql2no
+            // 
+            this.btn_sql2no.Location = new System.Drawing.Point(636, 42);
+            this.btn_sql2no.Name = "btn_sql2no";
+            this.btn_sql2no.Size = new System.Drawing.Size(139, 23);
+            this.btn_sql2no.TabIndex = 13;
+            this.btn_sql2no.Text = "多条nosame";
+            this.btn_sql2no.UseVisualStyleBackColor = true;
+            this.btn_sql2no.Click += new System.EventHandler(this.btn_sql2no_Click);
             // 
             // TestDBHelper
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_sql2no);
+            this.Controls.Add(this.btn_sql2same);
             this.Controls.Add(this.btn_execproc);
             this.Controls.Add(this.cb_parm);
             this.Controls.Add(this.btn_procquery);
@@ -180,5 +204,7 @@ namespace TestHelperApp
         private System.Windows.Forms.Button btn_procquery;
         private System.Windows.Forms.CheckBox cb_parm;
         private System.Windows.Forms.Button btn_execproc;
+        private System.Windows.Forms.Button btn_sql2same;
+        private System.Windows.Forms.Button btn_sql2no;
     }
 }
