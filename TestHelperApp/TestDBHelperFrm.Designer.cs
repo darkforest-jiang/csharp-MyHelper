@@ -41,6 +41,11 @@ namespace TestHelperApp
             this.btn_execproc = new System.Windows.Forms.Button();
             this.btn_sql2same = new System.Windows.Forms.Button();
             this.btn_sql2no = new System.Windows.Forms.Button();
+            this.btn_mysql_query = new System.Windows.Forms.Button();
+            this.btn_mysql_procquery = new System.Windows.Forms.Button();
+            this.btn_mysql_proc = new System.Windows.Forms.Button();
+            this.btn_mysql_same = new System.Windows.Forms.Button();
+            this.btn_mysql_nosame = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_result)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -168,11 +173,66 @@ namespace TestHelperApp
             this.btn_sql2no.UseVisualStyleBackColor = true;
             this.btn_sql2no.Click += new System.EventHandler(this.btn_sql2no_Click);
             // 
+            // btn_mysql_query
+            // 
+            this.btn_mysql_query.Location = new System.Drawing.Point(163, 100);
+            this.btn_mysql_query.Name = "btn_mysql_query";
+            this.btn_mysql_query.Size = new System.Drawing.Size(136, 23);
+            this.btn_mysql_query.TabIndex = 14;
+            this.btn_mysql_query.Text = "sql查询";
+            this.btn_mysql_query.UseVisualStyleBackColor = true;
+            this.btn_mysql_query.Click += new System.EventHandler(this.btn_mysql_query_Click);
+            // 
+            // btn_mysql_procquery
+            // 
+            this.btn_mysql_procquery.Location = new System.Drawing.Point(318, 100);
+            this.btn_mysql_procquery.Name = "btn_mysql_procquery";
+            this.btn_mysql_procquery.Size = new System.Drawing.Size(123, 23);
+            this.btn_mysql_procquery.TabIndex = 15;
+            this.btn_mysql_procquery.Text = "proc查询";
+            this.btn_mysql_procquery.UseVisualStyleBackColor = true;
+            this.btn_mysql_procquery.Click += new System.EventHandler(this.btn_mysql_procquery_Click);
+            // 
+            // btn_mysql_proc
+            // 
+            this.btn_mysql_proc.Location = new System.Drawing.Point(475, 100);
+            this.btn_mysql_proc.Name = "btn_mysql_proc";
+            this.btn_mysql_proc.Size = new System.Drawing.Size(59, 23);
+            this.btn_mysql_proc.TabIndex = 16;
+            this.btn_mysql_proc.Text = "proc";
+            this.btn_mysql_proc.UseVisualStyleBackColor = true;
+            this.btn_mysql_proc.Click += new System.EventHandler(this.btn_mysql_proc_Click);
+            // 
+            // btn_mysql_same
+            // 
+            this.btn_mysql_same.Location = new System.Drawing.Point(555, 99);
+            this.btn_mysql_same.Name = "btn_mysql_same";
+            this.btn_mysql_same.Size = new System.Drawing.Size(75, 23);
+            this.btn_mysql_same.TabIndex = 17;
+            this.btn_mysql_same.Text = "多条same";
+            this.btn_mysql_same.UseVisualStyleBackColor = true;
+            this.btn_mysql_same.Click += new System.EventHandler(this.btn_mysql_same_Click);
+            // 
+            // btn_mysql_nosame
+            // 
+            this.btn_mysql_nosame.Location = new System.Drawing.Point(636, 100);
+            this.btn_mysql_nosame.Name = "btn_mysql_nosame";
+            this.btn_mysql_nosame.Size = new System.Drawing.Size(139, 23);
+            this.btn_mysql_nosame.TabIndex = 18;
+            this.btn_mysql_nosame.Text = "多条nosame";
+            this.btn_mysql_nosame.UseVisualStyleBackColor = true;
+            this.btn_mysql_nosame.Click += new System.EventHandler(this.btn_mysql_nosame_Click);
+            // 
             // TestDBHelper
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_mysql_nosame);
+            this.Controls.Add(this.btn_mysql_same);
+            this.Controls.Add(this.btn_mysql_proc);
+            this.Controls.Add(this.btn_mysql_procquery);
+            this.Controls.Add(this.btn_mysql_query);
             this.Controls.Add(this.btn_sql2no);
             this.Controls.Add(this.btn_sql2same);
             this.Controls.Add(this.btn_execproc);
@@ -206,5 +266,10 @@ namespace TestHelperApp
         private System.Windows.Forms.Button btn_execproc;
         private System.Windows.Forms.Button btn_sql2same;
         private System.Windows.Forms.Button btn_sql2no;
+        private System.Windows.Forms.Button btn_mysql_query;
+        private System.Windows.Forms.Button btn_mysql_procquery;
+        private System.Windows.Forms.Button btn_mysql_proc;
+        private System.Windows.Forms.Button btn_mysql_same;
+        private System.Windows.Forms.Button btn_mysql_nosame;
     }
 }
