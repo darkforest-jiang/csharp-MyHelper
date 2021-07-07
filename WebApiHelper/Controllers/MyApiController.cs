@@ -14,6 +14,7 @@ namespace WebApiHelper.Controllers
     [Route("api/[controller]/[action]")]
     [ApiController]
     [MyFilter]
+    [Microsoft.AspNetCore.Authorization.Authorize]
     public class MyApiController : ControllerBase
     {
         private readonly ILogger<MyApiController> _logger;

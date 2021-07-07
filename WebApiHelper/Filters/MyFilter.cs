@@ -26,24 +26,20 @@ namespace WebApiHelper.Filters
 
             //请求参数都是一致的 可以获得其中的授权信息 如果不对拒绝执行
             //如果api接口是统一的参数 参数权限验证信息也在里边 在这儿也可以直接获取参数信息做权限验证
-            string token = string.Empty;
-            if(filterContext.HttpContext.Request.Headers.ContainsKey("token"))
-            {
-                token = filterContext.HttpContext.Request.Headers["token"].ToString();
-            }
-            if (token != "haha")    //验证token
-            {
-                //返回一个内容result     然后程序就不会进入controller中执行api方法
-                filterContext.Result = new ContentResult() { 
-                    StatusCode = 404,
-                    ContentType = "拒绝访问",
-                    Content = "无权限访问"
-                };
-                return;
-            }
-            //if (true)
+            //string token = string.Empty;
+            //if(filterContext.HttpContext.Request.Headers.ContainsKey("token"))
             //{
-            //    throw new Exception("用户非法跨权限访问，token：" );
+            //    token = filterContext.HttpContext.Request.Headers["token"].ToString();
+            //}
+            //if (token != "haha")    //验证token
+            //{
+            //    //返回一个内容result     然后程序就不会进入controller中执行api方法
+            //    filterContext.Result = new ContentResult() { 
+            //        StatusCode = 404,
+            //        ContentType = "拒绝访问",
+            //        Content = "无权限访问"
+            //    };
+            //    return;
             //}
 
             //记录日志
@@ -59,8 +55,6 @@ namespace WebApiHelper.Filters
             //filterContext.HttpContext.Items 可以存一些自定义数据 以便在其他方法 如 OnResultExecuted中国使用
             filterContext.HttpContext.Items.Add("FilterLog", flog);
 
-
-            
         }
 
 

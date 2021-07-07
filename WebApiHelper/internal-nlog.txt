@@ -54,3 +54,67 @@
 2021-01-26 21:20:17.0224 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: allfile
 2021-01-26 21:20:17.0394 Info Configuration initialized.
 2021-01-26 21:20:17.0394 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.6.12219. Product version: 4.7.6+e16065c1f397a4b0a5beed10d2e79bbedc1fd1e6. GlobalAssemblyCache: False
+2021-07-07 20:34:04.9883 Info Message Template Auto Format enabled
+2021-07-07 20:34:05.1412 Info Loading assembly: NLog.Web.AspNetCore
+2021-07-07 20:34:05.4788 Info Adding target FileTarget(Name=allfile)
+2021-07-07 20:34:05.4788 Info Adding target FileTarget(Name=ownFile-web)
+2021-07-07 20:34:05.7017 Info Validating config: TargetNames=ownFile-web, ConfigItems=43, FilePath=E:\MyGitHubCode\CSharp\MyHelper\WebApiHelper\bin\Debug\net5.0\NLog.config
+2021-07-07 20:34:05.7341 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: allfile
+2021-07-07 20:34:05.7814 Info Configuration initialized.
+2021-07-07 20:34:05.7840 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.6.12219. Product version: 4.7.6+e16065c1f397a4b0a5beed10d2e79bbedc1fd1e6. GlobalAssemblyCache: False
+2021-07-07 20:39:57.8465 Info Message Template Auto Format enabled
+2021-07-07 20:39:57.9402 Info Loading assembly: NLog.Web.AspNetCore
+2021-07-07 20:39:58.0757 Info Adding target FileTarget(Name=allfile)
+2021-07-07 20:39:58.0757 Info Adding target FileTarget(Name=ownFile-web)
+2021-07-07 20:39:58.1702 Info Validating config: TargetNames=ownFile-web, ConfigItems=43, FilePath=E:\MyGitHubCode\CSharp\MyHelper\WebApiHelper\bin\Debug\net5.0\NLog.config
+2021-07-07 20:39:58.1898 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: allfile
+2021-07-07 20:39:58.2350 Info Configuration initialized.
+2021-07-07 20:39:58.2392 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.6.12219. Product version: 4.7.6+e16065c1f397a4b0a5beed10d2e79bbedc1fd1e6. GlobalAssemblyCache: False
+2021-07-07 20:48:43.1392 Info Message Template Auto Format enabled
+2021-07-07 20:48:43.2355 Info Loading assembly: NLog.Web.AspNetCore
+2021-07-07 20:48:43.4931 Info Adding target FileTarget(Name=allfile)
+2021-07-07 20:48:43.4931 Info Adding target FileTarget(Name=ownFile-web)
+2021-07-07 20:48:43.5898 Info Validating config: TargetNames=ownFile-web, ConfigItems=43, FilePath=E:\MyGitHubCode\CSharp\MyHelper\WebApiHelper\bin\Debug\net5.0\NLog.config
+2021-07-07 20:48:43.6444 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: allfile
+2021-07-07 20:48:43.7388 Info Configuration initialized.
+2021-07-07 20:48:43.7388 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.6.12219. Product version: 4.7.6+e16065c1f397a4b0a5beed10d2e79bbedc1fd1e6. GlobalAssemblyCache: False
+2021-07-07 21:14:42.4827 Info Message Template Auto Format enabled
+2021-07-07 21:14:42.5798 Info Loading assembly: NLog.Web.AspNetCore
+2021-07-07 21:14:42.6967 Info Adding target FileTarget(Name=allfile)
+2021-07-07 21:14:42.6967 Info Adding target FileTarget(Name=ownFile-web)
+2021-07-07 21:14:42.7707 Info Validating config: TargetNames=ownFile-web, ConfigItems=43, FilePath=E:\MyGitHubCode\CSharp\MyHelper\WebApiHelper\bin\Debug\net5.0\NLog.config
+2021-07-07 21:14:42.7932 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: allfile
+2021-07-07 21:14:42.8508 Info Configuration initialized.
+2021-07-07 21:14:42.8508 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.6.12219. Product version: 4.7.6+e16065c1f397a4b0a5beed10d2e79bbedc1fd1e6. GlobalAssemblyCache: False
+2021-07-07 21:21:09.3874 Info Message Template Auto Format enabled
+2021-07-07 21:21:09.4548 Info Loading assembly: NLog.Web.AspNetCore
+2021-07-07 21:21:09.5331 Info Adding target FileTarget(Name=allfile)
+2021-07-07 21:21:09.5331 Info Adding target FileTarget(Name=ownFile-web)
+2021-07-07 21:21:09.5933 Info Validating config: TargetNames=ownFile-web, ConfigItems=43, FilePath=E:\MyGitHubCode\CSharp\MyHelper\WebApiHelper\bin\Debug\net5.0\NLog.config
+2021-07-07 21:21:09.6208 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: allfile
+2021-07-07 21:21:09.6553 Info Configuration initialized.
+2021-07-07 21:21:09.6553 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.6.12219. Product version: 4.7.6+e16065c1f397a4b0a5beed10d2e79bbedc1fd1e6. GlobalAssemblyCache: False
+2021-07-07 21:34:46.0367 Info Message Template Auto Format enabled
+2021-07-07 21:34:46.1775 Info Loading assembly: NLog.Web.AspNetCore
+2021-07-07 21:34:46.3716 Info Adding target FileTarget(Name=allfile)
+2021-07-07 21:34:46.3790 Info Adding target FileTarget(Name=ownFile-web)
+2021-07-07 21:34:46.4838 Info Validating config: TargetNames=ownFile-web, ConfigItems=43, FilePath=E:\MyGitHubCode\CSharp\MyHelper\WebApiHelper\bin\Debug\net5.0\NLog.config
+2021-07-07 21:34:46.5072 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: allfile
+2021-07-07 21:34:46.5961 Info Configuration initialized.
+2021-07-07 21:34:46.5961 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.6.12219. Product version: 4.7.6+e16065c1f397a4b0a5beed10d2e79bbedc1fd1e6. GlobalAssemblyCache: False
+2021-07-07 21:41:59.8217 Info Message Template Auto Format enabled
+2021-07-07 21:41:59.9400 Info Loading assembly: NLog.Web.AspNetCore
+2021-07-07 21:42:00.1097 Info Adding target FileTarget(Name=allfile)
+2021-07-07 21:42:00.1140 Info Adding target FileTarget(Name=ownFile-web)
+2021-07-07 21:42:00.1690 Info Validating config: TargetNames=ownFile-web, ConfigItems=43, FilePath=E:\MyGitHubCode\CSharp\MyHelper\WebApiHelper\bin\Debug\net5.0\NLog.config
+2021-07-07 21:42:00.1845 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: allfile
+2021-07-07 21:42:00.2121 Info Configuration initialized.
+2021-07-07 21:42:00.2121 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.6.12219. Product version: 4.7.6+e16065c1f397a4b0a5beed10d2e79bbedc1fd1e6. GlobalAssemblyCache: False
+2021-07-07 21:48:25.6263 Info Message Template Auto Format enabled
+2021-07-07 21:48:26.0625 Info Loading assembly: NLog.Web.AspNetCore
+2021-07-07 21:48:26.2403 Info Adding target FileTarget(Name=allfile)
+2021-07-07 21:48:26.2403 Info Adding target FileTarget(Name=ownFile-web)
+2021-07-07 21:48:26.3756 Info Validating config: TargetNames=ownFile-web, ConfigItems=43, FilePath=E:\MyGitHubCode\CSharp\MyHelper\WebApiHelper\bin\Debug\net5.0\NLog.config
+2021-07-07 21:48:26.4079 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: allfile
+2021-07-07 21:48:26.4381 Info Configuration initialized.
+2021-07-07 21:48:26.4411 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.6.12219. Product version: 4.7.6+e16065c1f397a4b0a5beed10d2e79bbedc1fd1e6. GlobalAssemblyCache: False
