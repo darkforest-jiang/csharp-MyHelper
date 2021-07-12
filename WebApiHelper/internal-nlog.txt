@@ -118,3 +118,39 @@
 2021-07-07 21:48:26.4079 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: allfile
 2021-07-07 21:48:26.4381 Info Configuration initialized.
 2021-07-07 21:48:26.4411 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.6.12219. Product version: 4.7.6+e16065c1f397a4b0a5beed10d2e79bbedc1fd1e6. GlobalAssemblyCache: False
+2021-07-12 14:37:52.7505 Info Message Template Auto Format enabled
+2021-07-12 14:37:54.6927 Info Loading assembly: NLog.Web.AspNetCore
+2021-07-12 14:37:54.8723 Info Adding target FileTarget(Name=allfile)
+2021-07-12 14:37:54.9052 Info Adding target FileTarget(Name=globalActionFilter)
+2021-07-12 14:37:54.9201 Info Adding target FileTarget(Name=ownFile-web)
+2021-07-12 14:37:55.1014 Info Validating config: TargetNames=globalActionFilter, ownFile-web, ConfigItems=67, FilePath=E:\MyGitHubCode\CSharp\MyHelper\WebApiHelper\bin\Debug\net5.0\NLog.config
+2021-07-12 14:37:55.1460 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: allfile
+2021-07-12 14:37:55.1877 Info Configuration initialized.
+2021-07-12 14:37:55.1927 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.6.12219. Product version: 4.7.6+e16065c1f397a4b0a5beed10d2e79bbedc1fd1e6. GlobalAssemblyCache: False
+2021-07-12 14:47:25.1192 Info Message Template Auto Format enabled
+2021-07-12 14:47:25.1945 Info Loading assembly: NLog.Web.AspNetCore
+2021-07-12 14:47:25.3627 Info Adding target FileTarget(Name=allfile)
+2021-07-12 14:47:25.3627 Info Adding target FileTarget(Name=globalActionFilter)
+2021-07-12 14:47:25.3787 Info Adding target FileTarget(Name=ownFile-web)
+2021-07-12 14:47:25.4592 Info Validating config: TargetNames=globalActionFilter, ownFile-web, ConfigItems=67, FilePath=E:\MyGitHubCode\CSharp\MyHelper\WebApiHelper\bin\Debug\net5.0\NLog.config
+2021-07-12 14:47:25.5019 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: allfile
+2021-07-12 14:47:25.5316 Info Configuration initialized.
+2021-07-12 14:47:25.5348 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.6.12219. Product version: 4.7.6+e16065c1f397a4b0a5beed10d2e79bbedc1fd1e6. GlobalAssemblyCache: False
+2021-07-12 14:53:40.5719 Info Message Template Auto Format enabled
+2021-07-12 14:53:40.7013 Info Loading assembly: NLog.Web.AspNetCore
+2021-07-12 14:53:40.8514 Info Adding target FileTarget(Name=allfile)
+2021-07-12 14:53:40.8618 Info Adding target FileTarget(Name=globalActionFilter)
+2021-07-12 14:53:40.8618 Info Adding target FileTarget(Name=ownFile-web)
+2021-07-12 14:53:40.9562 Info Validating config: TargetNames=globalActionFilter, ownFile-web, ConfigItems=67, FilePath=E:\MyGitHubCode\CSharp\MyHelper\WebApiHelper\bin\Debug\net5.0\NLog.config
+2021-07-12 14:53:40.9838 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: allfile
+2021-07-12 14:53:41.0187 Info Configuration initialized.
+2021-07-12 14:53:41.0187 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.6.12219. Product version: 4.7.6+e16065c1f397a4b0a5beed10d2e79bbedc1fd1e6. GlobalAssemblyCache: False
+2021-07-12 14:58:34.8618 Info Message Template Auto Format enabled
+2021-07-12 14:58:35.0565 Info Loading assembly: NLog.Web.AspNetCore
+2021-07-12 14:58:35.3155 Info Adding target FileTarget(Name=allfile)
+2021-07-12 14:58:35.3155 Info Adding target FileTarget(Name=globalActionFilter)
+2021-07-12 14:58:35.3155 Info Adding target FileTarget(Name=ownFile-web)
+2021-07-12 14:58:35.4334 Info Validating config: TargetNames=globalActionFilter, ownFile-web, ConfigItems=68, FilePath=E:\MyGitHubCode\CSharp\MyHelper\WebApiHelper\bin\Debug\net5.0\NLog.config
+2021-07-12 14:58:35.4671 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: allfile
+2021-07-12 14:58:35.5046 Info Configuration initialized.
+2021-07-12 14:58:35.5046 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.6.12219. Product version: 4.7.6+e16065c1f397a4b0a5beed10d2e79bbedc1fd1e6. GlobalAssemblyCache: False

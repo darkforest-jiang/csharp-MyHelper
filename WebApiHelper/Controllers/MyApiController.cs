@@ -13,7 +13,7 @@ namespace WebApiHelper.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
-    [MyFilter]
+    //使用JwtBearer 作为jwt 认证授权
     [Microsoft.AspNetCore.Authorization.Authorize]
     public class MyApiController : ControllerBase
     {
@@ -33,6 +33,7 @@ namespace WebApiHelper.Controllers
             rr.Data = "hahah";
 
             _logger.LogInformation("hhahahh完成了");
+
 
             return rr;
         }

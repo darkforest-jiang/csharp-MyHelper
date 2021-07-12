@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace WebApiHelper.Models
 {
+    /// <summary>
+    /// 用户Token信息
+    /// </summary>
     public class UserToken
     {
         public string Token { get; set; }

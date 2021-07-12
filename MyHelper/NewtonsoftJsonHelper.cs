@@ -7,7 +7,8 @@ using Newtonsoft.Json;
 
 namespace MyHelper
 {
-    public class JsonHelper
+    public class NewtonsoftJsonHelper
     {
+
     }
 }

@@ -5,6 +5,10 @@ using System.Threading.Tasks;
 
 namespace WebApiHelper.Models
 {
+    /// <summary>
+    /// 请求参数
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class Rp<T>
     {
         /// <summary>

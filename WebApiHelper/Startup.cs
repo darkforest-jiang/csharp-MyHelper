@@ -16,6 +16,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using WebApiHelper.Models;
+using WebApiHelper.Filters;
 
 namespace WebApiHelper
 {
@@ -90,7 +91,11 @@ namespace WebApiHelper
             });
             #endregion
 
-            services.AddControllers();
+            services.AddControllers(options => {
+                //Ìí¼ÓÈ«¾ÖActionFilter
+                options.Filters.Add<MyGlobalActionFilter>();
+
+            });
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebApiHelper", Version = "v1" });
